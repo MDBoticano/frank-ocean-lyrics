@@ -101,14 +101,14 @@ class App extends Component {
   changeBackground = () => {
     let randomIndex = -1;
 
-    // Get index of a quote not equal to current color
-    do {
-      randomIndex = Math.floor((Math.random() * 4));
-    }
-    // Keep looking if it's the same index as our current quote or if the 
-    // randomized index exists in our viewedQuotes array
-    while (randomIndex === this.state.quoteIndex ||
-      this.state.viewedQuotes.indexOf(randomIndex) >= 0);
+    // // Get index of a quote not equal to current color
+    // do {
+    //   randomIndex = Math.floor((Math.random() * 4));
+    // }
+    // // Keep looking if it's the same index as our current quote or if the 
+    // // randomized index exists in our viewedQuotes array
+    // while (randomIndex === this.state.quoteIndex ||
+    //   this.state.viewedQuotes.indexOf(randomIndex) >= 0);
   }
 
   // Render
