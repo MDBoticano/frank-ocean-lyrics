@@ -1,44 +1,125 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --stripe-blue: #0600EC;
+  --stripe-magenta: #EA00EB;
+  --stripe-red: #E70100;
+  --stripe-orange: #ED8606;
+  --page-font: 'Nunito Sans', sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 
 body {
-  margin: 20px;
-  background-color: #282c34;
+  /* margin: 20px; */
+  /* background-color: #282c34; */
+  /* min-height: 100vh;
+  background: linear-gradient(45deg, white 50%, navy 50%); */
+  /* font-family: var(--page-font); */
+  font-family: var(--page-font);
+}
+
+#top-stripes {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.top-stripe {
+  min-height: .5em;
+}
+
+#stripe-1 {
+  background-color: var(--stripe-blue);
+}
+#stripe-2 {
+  background-color: var(--stripe-magenta);
+}
+#stripe-3 {
+  background-color: var(--stripe-red);
+}
+#stripe-4 {
+  background-color: var(--stripe-orange);
 }
 
 #quote-box {
-  padding: 20px;
-  background-color: #aaa;
+  padding: 1.5em;
+  /* background-color: #eee; */
+  /* box-shadow: 10px 10px #444; */
+  max-width: 45vw;
+  margin: auto;
 }
+
+#page-title {
+  margin: 1em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#lyric-section {
+  margin: 5em 0;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600px;
+}
+
+#horizontal-bar {
+  min-height: .25em;
+  background-color: var(--stripe-blue);
+}
+
+#song-details-section {
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#songName {
+  font-style: italic;
+}
+
+#album {
+  text-align: right;
+}
+
+
+#box-buttons {
+  /* display: grid;
+  grid-template-columns: 120px auto 80px; */
+  display: block;
+}
+
+button {
+  /* height:38px;
+  border:none;
+  border-radius:3px;
+  color:#fff;
+  background-color:#333;
+  outline:none;
+  font-size:0.85em;
+  padding: 8px 18px 6px 18px;
+  cursor:pointer; */
+  height: 40px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: red;
+}
+
+#new-quote {
+  float: right;
+}
+
+#new-quote p {
+  margin: 0;
+  padding: 0;
+}
+
+#tweet-quote {
+  border-radius: 4px;
+}
+
+#tweet-icon {
+
+}
+
+/* #wrapper {
+  min-height: 100vh;
+  background: linear-gradient(45deg, white 80%, navy 20%);
+} */

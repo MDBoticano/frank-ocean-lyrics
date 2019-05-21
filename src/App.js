@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
+// Fontawesome icons
+// import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+//library.add(faTwitter); // Not sure if this is necessary
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -11,23 +18,29 @@ class App extends Component {
       text: '',
       author: '',
       songName: '',
-      album: ''
+      album: '',
+      stripeColor: '',
+      colorIndex: -1,
+      viewedColors: []
     };
     // Bind functions to this
     this.newQuote = this.newQuote.bind(this);
     this.shareOnTwitter = this.shareOnTwitter.bind(this);
   }
 
+  componentDidMount() {
+    // Set title
+    document.title = 'Frank Ocean Lyrics';
 
-  componentWillMount() {
     // Get JSON from gist
-    fetch('https://gist.githubusercontent.com/MDBoticano/d88c9ddd0eedd5d3223ff7b5bc5f0090/raw/d90344093909f16a86cc999efa76e0df97d0547f/lyrics.json')
-
+    fetch('https://gist.githubusercontent.com/MDBoticano/d88c9ddd0eedd5d3223ff7b5bc5f0090/raw/de541631b9e409c39e8d835098c6bb01ec1f20c3/lyrics.json')
       .then(response => response.json()) // parses data as json
       .then((data) => {
 
         // Generate a random index to set initial state
         let randomIndex = Math.floor((Math.random() * data.lyrics.length));
+
+        let colorInd = Math.floor(Math.random()*4);
 
         this.setState({
           lyrics: data.lyrics,
@@ -42,7 +55,6 @@ class App extends Component {
       .catch(error => this.setState({ error }));
   }
 
-
   // New Quote: clears current quote and grabs a new one from JSON
   newQuote() {
     this.getNewQuote();
@@ -56,31 +68,23 @@ class App extends Component {
   getNewQuote = () => {
     let randomIndex = -1;
 
-    //console.log("clicked");
-
-
-
-
     // Get index of a quote not equal to current quote
     do {
       randomIndex = Math.floor((Math.random() * this.state.lyrics.length));
     }
-    // Keep looking if it's the same index as our current quote or if the randomized index exists in our viewedQuotes array
+    // Keep looking if it's the same index as our current quote or if the 
+    // randomized index exists in our viewedQuotes array
     while (randomIndex === this.state.quoteIndex ||
       this.state.viewedQuotes.indexOf(randomIndex) >= 0);
 
-    console.log(this.state.viewedQuotes.indexOf(randomIndex));
+    //console.log(this.state.viewedQuotes.indexOf(randomIndex));
 
     let viewedQuotesArr = [...this.state.viewedQuotes, randomIndex];
 
     // If we've gone through every quote, forget which quotes we've seen
     if (viewedQuotesArr.length === this.state.lyrics.length) {
-
       viewedQuotesArr = [];
-
-      //console.log('reset viewed quotes');
     }
-
     //console.log(viewedQuotesArr);
 
     // Set new quote data
@@ -92,31 +96,64 @@ class App extends Component {
       songName: this.state.lyrics[randomIndex].songName,
       album: this.state.lyrics[randomIndex].album,
     });
-
   }
 
   changeBackground = () => {
+    let randomIndex = -1;
 
+    // Get index of a quote not equal to current color
+    do {
+      randomIndex = Math.floor((Math.random() * 4));
+    }
+    // Keep looking if it's the same index as our current quote or if the 
+    // randomized index exists in our viewedQuotes array
+    while (randomIndex === this.state.quoteIndex ||
+      this.state.viewedQuotes.indexOf(randomIndex) >= 0);
   }
 
   // Render
   render() {
     return (
       <div id="wrapper">
+
+        <div id="top-stripes">
+          <div id="stripe-1" className="top-stripe"></div>
+          <div id="stripe-2" className="top-stripe"></div>
+          <div id="stripe-3" className="top-stripe"></div>
+          <div id="stripe-4" className="top-stripe" ></div>
+        </div>
+
         <div id="quote-box">
+
+          <div id="page-title">
+            <p id="author">Lyrics by {this.state.author}</p>
+          </div>
+
+          {/* text == lyric */}
+          <div id="lyric-section">
+            <p id="text">{this.state.text}</p>
+          </div>
+
+          <div id="horizontal-bar" className={this.state.stripeColor}></div>
+
+          <div id="song-details-section">
+            <p id="songName">{this.state.songName}</p>
+            <p id="album">{this.state.album}</p>
+          </div>
 
           {/* Share + new lyric */}
           <div id="box-buttons">
+
+            <button>
+              <a id="tweet-quote" className="button" href="twitter.com/intent/">
+                <FontAwesomeIcon id="tweet-icon" icon={faTwitter} />
+              </a>
+            </button>
+
             <button id="new-quote" onClick={this.newQuote}>
               New Lyric
             </button>
           </div>
-
-          {/* text == lyric */}
-          <h2 id="text">{this.state.text}</h2>
-          <p id="songName">{this.state.songName}</p>
-          <p id="album">{this.state.album}</p>
-          <p id="author">{this.state.author}</p>
 
         </div>
       </div>

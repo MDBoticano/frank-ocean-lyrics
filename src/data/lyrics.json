@@ -9,14 +9,14 @@
     },
     {
       "author": "Andre 3000",
-      "lyric": "You're good at being bad, you're bad at being good",
+      "lyric": "You're good at being bad, you're bad at being good",
       "songName": "Pink Matter",
       "album": "Channel Orange",
       "albumArtist": "Frank Ocean"
     },
     {
       "author": "Frank Ocean",
-      "lyric": "Read my mind, freed my mind, feed my mind, makes sense",
+      "lyric": "Read my mind, freed my mind, feed my mind, makes sense",
       "songName": "Purity",
       "album": "Testing",
       "albumArtist": "A$AP Rocky"
@@ -24,7 +24,7 @@
     {
       "author": "A$AP Rocky",
       "lyric": "ASAP",
-      "songName": "Purity",
+      "songName": "Purity ft Frank Ocean",
       "album": "Testing",
       "albumArtist": "A$AP Rocky"
     },
@@ -47,6 +47,41 @@
       "lyric": "Them bitches want Nikes",
       "songName": "Nikes",
       "album": "Blonde",
+      "albumArtist": "Frank Ocean"
+    },
+    {
+      "author": "Frank Ocean",
+      "lyric": "Every night fucks every day up, Every day patches the night up",
+      "songName": "Nights",
+      "album": "Blonde",
+      "albumArtist": "Frank Ocean"
+    },
+    {
+      "author": "Frank Ocean",
+      "lyric": "Taxi driver you my shrink for the hour",
+      "songName": "Bad Religion",
+      "album": "Channel Orange",
+      "albumArtist": "Frank Ocean"
+    },
+    {
+      "author": "Frank Ocean",
+      "lyric": "Poolside convo about your summer last night",
+      "songName": "Self Control",
+      "album": "Blonde",
+      "albumArtist": "Frank Ocean"
+    },
+    {
+      "author": "Frank Ocean",
+      "lyric": "God gave you what you can handle",
+      "songName": "Biking ft Tyler, the Creator & JAY-Z",
+      "album": "Biking",
+      "albumArtist": "Frank Ocean"
+    },
+    {
+      "author": "JAY-Z",
+      "lyric": "Wristwatch got a Russian face like an oligarch",
+      "songName": "Biking ft Tyler, the Creator & JAY-Z",
+      "album": "Biking",
       "albumArtist": "Frank Ocean"
     }
   ]
