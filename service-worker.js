@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/frank-ocean-lyrics/precache-manifest.a0fd581d7ce0a117c8eadb2324b16e24.js"
+  "/frank-ocean-lyrics/precache-manifest.71889d57e42a1d377fea42895e2ee62c.js"
 );
 
 self.addEventListener('message', (event) => {
