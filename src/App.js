@@ -7,6 +7,7 @@ class App extends Component {
     this.state = {
       lyrics: null,
       quoteIndex: -1,
+      viewedQuotes: [],
       text: '',
       author: '',
       songName: '',
@@ -19,11 +20,8 @@ class App extends Component {
 
 
   componentWillMount() {
-    // Set title
-    document.title = 'Frank Ocean Lyrics';
-
     // Get JSON from gist
-    fetch('https://gist.githubusercontent.com/MDBoticano/d88c9ddd0eedd5d3223ff7b5bc5f0090/raw/9ac54b42a1ba785c28376ec1943c2b48a6ab6abf/lyrics.json')
+    fetch('https://gist.githubusercontent.com/MDBoticano/d88c9ddd0eedd5d3223ff7b5bc5f0090/raw/d90344093909f16a86cc999efa76e0df97d0547f/lyrics.json')
 
       .then(response => response.json()) // parses data as json
       .then((data) => {
@@ -34,6 +32,7 @@ class App extends Component {
         this.setState({
           lyrics: data.lyrics,
           quoteIndex: randomIndex,
+          viewedQuotes: [randomIndex],
           text: data.lyrics[randomIndex].lyric,
           author: data.lyrics[randomIndex].author,
           songName: data.lyrics[randomIndex].songName,
@@ -57,14 +56,37 @@ class App extends Component {
   getNewQuote = () => {
     let randomIndex = -1;
 
+    //console.log("clicked");
+
+
+
+
     // Get index of a quote not equal to current quote
-    while (randomIndex === this.state.quoteIndex || randomIndex < 0) {
+    do {
       randomIndex = Math.floor((Math.random() * this.state.lyrics.length));
     }
+    // Keep looking if it's the same index as our current quote or if the randomized index exists in our viewedQuotes array
+    while (randomIndex === this.state.quoteIndex ||
+      this.state.viewedQuotes.indexOf(randomIndex) >= 0);
+
+    console.log(this.state.viewedQuotes.indexOf(randomIndex));
+
+    let viewedQuotesArr = [...this.state.viewedQuotes, randomIndex];
+
+    // If we've gone through every quote, forget which quotes we've seen
+    if (viewedQuotesArr.length === this.state.lyrics.length) {
+
+      viewedQuotesArr = [];
+
+      //console.log('reset viewed quotes');
+    }
+
+    //console.log(viewedQuotesArr);
 
     // Set new quote data
     this.setState({
       quoteIndex: randomIndex,
+      viewedQuotes: viewedQuotesArr,
       text: this.state.lyrics[randomIndex].lyric,
       author: this.state.lyrics[randomIndex].author,
       songName: this.state.lyrics[randomIndex].songName,

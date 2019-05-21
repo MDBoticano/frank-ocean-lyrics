@@ -9,7 +9,7 @@
     },
     {
       "author": "Andre 3000",
-      "lyric": "If models are made for modelin' Thick girls are made for Cuddlin' Switch worlds and we can huddle then",
+      "lyric": "You're good at being bad, you're bad at being good",
       "songName": "Pink Matter",
       "album": "Channel Orange",
       "albumArtist": "Frank Ocean"
@@ -27,6 +27,27 @@
       "songName": "Purity",
       "album": "Testing",
       "albumArtist": "A$AP Rocky"
+    },
+    {
+      "author": "Frank Ocean",
+      "lyric": "Shut the fuck up I don't want your conversation",
+      "songName": "Nights",
+      "album": "Blonde",
+      "albumArtist": "Frank Ocean"
+    },
+    {
+      "author": "Frank Ocean",
+      "lyric": "I'm sure we're taller in another dimension",
+      "songName": "White Ferrari",
+      "album": "Blonde",
+      "albumArtist": "Frank Ocean"
+    },
+    {
+      "author": "Frank Ocean",
+      "lyric": "Them bitches want Nikes",
+      "songName": "Nikes",
+      "album": "Blonde",
+      "albumArtist": "Frank Ocean"
     }
   ]
 }
