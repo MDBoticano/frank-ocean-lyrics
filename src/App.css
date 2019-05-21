@@ -62,7 +62,23 @@ body {
 
 #horizontal-bar {
   min-height: .25em;
+  /* background-color: green; */
+}
+
+.blueStripe {
   background-color: var(--stripe-blue);
+}
+
+.magentaStripe {
+  background-color: var(--stripe-magenta);
+}
+
+.redStripe {
+  background-color: var(--stripe-red);
+}
+
+.orangeStripe {
+  background-color: var(--stripe-orange);
 }
 
 #song-details-section {
@@ -116,7 +132,7 @@ button {
 }
 
 #tweet-icon {
-
+  opacity: 1;
 }
 
 /* #wrapper {

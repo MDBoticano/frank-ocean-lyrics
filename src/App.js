@@ -19,9 +19,10 @@ class App extends Component {
       author: '',
       songName: '',
       album: '',
-      stripeColor: '',
-      colorIndex: -1,
-      viewedColors: []
+      bgColors: ['blueStripe', 'magentaStripe', 'redStripe', 'orangeStripe'],
+      currentColor: '',
+      bgIndex: -1,
+      bgViewed: []
     };
     // Bind functions to this
     this.newQuote = this.newQuote.bind(this);
@@ -40,7 +41,12 @@ class App extends Component {
         // Generate a random index to set initial state
         let randomIndex = Math.floor((Math.random() * data.lyrics.length));
 
-        let colorInd = Math.floor(Math.random()*4);
+        // Generate random index for color
+        let colorInd = Math.floor((Math.random() * this.state.bgColors.length));
+
+        let colorArr = this.state.bgColors;
+        let initialColor = colorArr[colorInd];
+        console.log(initialColor);
 
         this.setState({
           lyrics: data.lyrics,
@@ -50,7 +56,11 @@ class App extends Component {
           author: data.lyrics[randomIndex].author,
           songName: data.lyrics[randomIndex].songName,
           album: data.lyrics[randomIndex].album,
+          currentColor: initialColor,
+          bgIndex: colorInd,
+          bgViewed: [colorInd]
         });
+
       })
       .catch(error => this.setState({ error }));
   }
@@ -101,14 +111,29 @@ class App extends Component {
   changeBackground = () => {
     let randomIndex = -1;
 
-    // // Get index of a quote not equal to current color
-    // do {
-    //   randomIndex = Math.floor((Math.random() * 4));
-    // }
-    // // Keep looking if it's the same index as our current quote or if the 
-    // // randomized index exists in our viewedQuotes array
-    // while (randomIndex === this.state.quoteIndex ||
-    //   this.state.viewedQuotes.indexOf(randomIndex) >= 0);
+    // Get index of a quote not equal to current color
+    do {
+      randomIndex = Math.floor((Math.random() * this.state.bgColors.length));
+    } while (randomIndex === this.state.bgIndex ||
+      this.state.bgViewed.indexOf(randomIndex) >= 0);
+
+    let bgViewedArr = [...this.state.bgViewed, randomIndex];
+    // console.log(bgViewedArr);
+
+     // If we've gone through every quote, forget which quotes we've seen
+     if (bgViewedArr.length === this.state.bgColors.length) {
+      //console.log("reset colors viewed");
+      bgViewedArr = [];
+    }
+
+    let colorToSet = this.state.bgColors[randomIndex];
+    //console.log(colorToSet);
+
+    this.setState({
+      currentColor: colorToSet,
+      bgIndex: randomIndex,
+      bgViewed: bgViewedArr      
+    });
   }
 
   // Render
@@ -134,7 +159,7 @@ class App extends Component {
             <p id="text">{this.state.text}</p>
           </div>
 
-          <div id="horizontal-bar" className={this.state.stripeColor}></div>
+          <div id="horizontal-bar" className={this.state.currentColor}></div>
 
           <div id="song-details-section">
             <p id="songName">{this.state.songName}</p>
