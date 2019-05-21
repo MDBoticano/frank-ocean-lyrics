@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+
+
+body {
+  margin: 20px;
+  background-color: #282c34;
+}
+
+#quote-box {
+  padding: 20px;
+  background-color: #aaa;
+}

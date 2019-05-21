@@ -1,0 +1,32 @@
+{
+  "lyrics": [
+    {
+      "author": "Frank Ocean",
+      "lyric": "I've been thinking bout you",
+      "songName": "Thinkin Bout You",
+      "album": "Channel Orange",
+      "albumArtist": "Frank Ocean"
+    },
+    {
+      "author": "Andre 3000",
+      "lyric": "If models are made for modelin' Thick girls are made for Cuddlin' Switch worlds and we can huddle then",
+      "songName": "Pink Matter",
+      "album": "Channel Orange",
+      "albumArtist": "Frank Ocean"
+    },
+    {
+      "author": "Frank Ocean",
+      "lyric": "Read my mind, freed my mind, feed my mind, makes sense",
+      "songName": "Purity",
+      "album": "Testing",
+      "albumArtist": "A$AP Rocky"
+    },
+    {
+      "author": "A$AP Rocky",
+      "lyric": "ASAP",
+      "songName": "Purity",
+      "album": "Testing",
+      "albumArtist": "A$AP Rocky"
+    }
+  ]
+}
