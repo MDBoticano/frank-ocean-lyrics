@@ -17,8 +17,12 @@ class App extends Component {
     this.shareOnTwitter = this.shareOnTwitter.bind(this);
   }
 
-  // Get JSON from gist
+
   componentWillMount() {
+    // Set title
+    document.title = 'Frank Ocean Lyrics';
+
+    // Get JSON from gist
     fetch('https://gist.githubusercontent.com/MDBoticano/d88c9ddd0eedd5d3223ff7b5bc5f0090/raw/9ac54b42a1ba785c28376ec1943c2b48a6ab6abf/lyrics.json')
 
       .then(response => response.json()) // parses data as json
