@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/frank-ocean-lyrics/static/css/main.f2fb873e.chunk.css",
-    "main.js": "/frank-ocean-lyrics/static/js/main.699247cd.chunk.js",
-    "main.js.map": "/frank-ocean-lyrics/static/js/main.699247cd.chunk.js.map",
+    "main.css": "/frank-ocean-lyrics/static/css/main.7c20f003.chunk.css",
+    "main.js": "/frank-ocean-lyrics/static/js/main.c399ee73.chunk.js",
+    "main.js.map": "/frank-ocean-lyrics/static/js/main.c399ee73.chunk.js.map",
     "runtime~main.js": "/frank-ocean-lyrics/static/js/runtime~main.d1cd1bb1.js",
     "runtime~main.js.map": "/frank-ocean-lyrics/static/js/runtime~main.d1cd1bb1.js.map",
     "static/js/2.bb4c677f.chunk.js": "/frank-ocean-lyrics/static/js/2.bb4c677f.chunk.js",
     "static/js/2.bb4c677f.chunk.js.map": "/frank-ocean-lyrics/static/js/2.bb4c677f.chunk.js.map",
     "index.html": "/frank-ocean-lyrics/index.html",
-    "precache-manifest.63a42827f282412528a95bfe41748116.js": "/frank-ocean-lyrics/precache-manifest.63a42827f282412528a95bfe41748116.js",
+    "precache-manifest.9aba20472e522dbb43f258e927a6fe86.js": "/frank-ocean-lyrics/precache-manifest.9aba20472e522dbb43f258e927a6fe86.js",
     "service-worker.js": "/frank-ocean-lyrics/service-worker.js",
-    "static/css/main.f2fb873e.chunk.css.map": "/frank-ocean-lyrics/static/css/main.f2fb873e.chunk.css.map"
+    "static/css/main.7c20f003.chunk.css.map": "/frank-ocean-lyrics/static/css/main.7c20f003.chunk.css.map"
   }
 }
