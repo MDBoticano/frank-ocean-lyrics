@@ -34,7 +34,7 @@ class App extends Component {
     document.title = 'Frank Ocean Lyrics';
 
     // Get JSON from gist
-    fetch('https://gist.githubusercontent.com/MDBoticano/d88c9ddd0eedd5d3223ff7b5bc5f0090/raw/de541631b9e409c39e8d835098c6bb01ec1f20c3/lyrics.json')
+    fetch('https://gist.githubusercontent.com/MDBoticano/d88c9ddd0eedd5d3223ff7b5bc5f0090/raw/5bfd8263c9c136b23560ad2db21df35beecdb86b/lyrics.json')
       .then(response => response.json()) // parses data as json
       .then((data) => {
 
@@ -71,8 +71,11 @@ class App extends Component {
     this.changeBackground();
   }
 
-  shareOnTwitter() {
-
+  shareOnTwitter = () => {
+    // found on https://gist.github.com/McKinneyDigital/2884508#file-share-twitter-js
+    var url = "twitter.com";
+    let tweet = `${this.state.text} - ${this.state.author} (${this.state.songName})`
+    window.open('http://twitter.com/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(tweet), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
   }
 
   getNewQuote = () => {
@@ -120,8 +123,8 @@ class App extends Component {
     let bgViewedArr = [...this.state.bgViewed, randomIndex];
     // console.log(bgViewedArr);
 
-     // If we've gone through every quote, forget which quotes we've seen
-     if (bgViewedArr.length === this.state.bgColors.length) {
+    // If we've gone through every quote, forget which quotes we've seen
+    if (bgViewedArr.length === this.state.bgColors.length) {
       //console.log("reset colors viewed");
       bgViewedArr = [];
     }
@@ -132,7 +135,7 @@ class App extends Component {
     this.setState({
       currentColor: colorToSet,
       bgIndex: randomIndex,
-      bgViewed: bgViewedArr      
+      bgViewed: bgViewedArr
     });
   }
 
@@ -148,20 +151,26 @@ class App extends Component {
           <div id="stripe-4" className="top-stripe" ></div>
         </div>
 
-        <div id="quote-box">
+        <div id="page-title">
+          <p id="subtitle">Lyrics by Frank Ocean</p>
+        </div>
 
-          <div id="page-title">
-            <p id="author">Lyrics by {this.state.author}</p>
-          </div>
+        <div id="quote-box">
 
           {/* text == lyric */}
           <div id="lyric-section">
             <p id="text">{this.state.text}</p>
           </div>
 
+          <div id="singer-section">
+            <p id="author">- {this.state.author}</p>
+          </div>
+
           <div id="horizontal-bar" className={this.state.currentColor}></div>
 
+
           <div id="song-details-section">
+
             <p id="songName">{this.state.songName}</p>
             <p id="album">{this.state.album}</p>
           </div>
@@ -169,15 +178,17 @@ class App extends Component {
           {/* Share + new lyric */}
           <div id="box-buttons">
 
-            <button>
+            <button id="new-quote" onClick={this.newQuote}>
+              New Lyric
+            </button>
+
+            <button id="quote-btn" onClick={this.shareOnTwitter}>
               <a id="tweet-quote" className="button" href="twitter.com/intent/">
                 <FontAwesomeIcon id="tweet-icon" icon={faTwitter} />
               </a>
             </button>
 
-            <button id="new-quote" onClick={this.newQuote}>
-              New Lyric
-            </button>
+
           </div>
 
         </div>
