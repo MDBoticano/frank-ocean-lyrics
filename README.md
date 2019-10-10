@@ -1,3 +1,10 @@
+# Frank Ocean Lyrics
+I created a quote/lyric machine app using React. This is my submission to FreeCodeCamp's [Random Quote Machine](https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine/) for the Front End Libraries Projects.
+
+You can interact with it [here](https://mdboticano.github.io/frank-ocean-lyrics/).
+
+----
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
